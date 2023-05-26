@@ -42,7 +42,6 @@ public partial class MainPage : ContentPage
     int numeroPregunta = 0;
     int correctas = 0;
     int incorrectas = 0;
-    int cantidadPreguntas = 0;
     int puntajeParaGanar = 3;
     int intentos = 2;
     bool juegoTerminado = false;
@@ -70,7 +69,6 @@ public partial class MainPage : ContentPage
         numeroPregunta = 0;
         correctas = 0;
         incorrectas = 0;
-        cantidadPreguntas = 0;
         puntajeParaGanar = 3;
         intentos = 2;
         juegoTerminado = false;
@@ -79,6 +77,7 @@ public partial class MainPage : ContentPage
         txtPuntaje.Text = $"Puntos: {correctas}";
         txtResultado.Text = "";
         txtRespuesta.Text = "";
+        imgResultado.Source = "";
 
 
     }
@@ -118,6 +117,7 @@ public partial class MainPage : ContentPage
     {
 
         correctas++;
+        imgResultado.Source = "resultado1.png";
         txtPuntaje.Text = $"Puntos: {correctas}";
         txtResultado.Text = "Respuesta Correcta";
 
@@ -126,6 +126,7 @@ public partial class MainPage : ContentPage
 
     void actualizarRespuestaIncorrecta()
     {
+        imgResultado.Source = "resultado2.png";
         txtResultado.Text = "Respuesta Incorrecta";
         incorrectas++;
 
@@ -160,7 +161,7 @@ public partial class MainPage : ContentPage
 
     void ganarJuego()
     {
-
+        imgResultado.Source = "resultado3.png";
         txtResultado.Text = "GANASTE";
 
             terminarJuego();
@@ -184,6 +185,7 @@ public partial class MainPage : ContentPage
                 }
                 else
                 {
+                    imgResultado.Source = "resultado2.png";
                     intentos--;
                     txtResultado.Text = "Respuesta Incorrecta, inténtalo de nuevo";
                 }

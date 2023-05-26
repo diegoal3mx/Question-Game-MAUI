@@ -22,12 +22,14 @@
             WidthRequest="900"
             >
 
-            <Label
+
+            <Border Stroke="White" StrokeThickness="5" WidthRequest="150" HorizontalOptions="End" >
+                <Label
                 x:Name="txtPuntaje"
                 Text="Puntos: 0"
                 FontSize="25"
-              
-                HorizontalOptions="End" />
+                HorizontalOptions="Center" />
+            </Border>
 
             <Label
                 x:Name="txtPregunta"
@@ -67,13 +69,19 @@
                 HorizontalOptions="Center" />
 
             </HorizontalStackLayout>
-          
 
-            <Label
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                <Image x:Name="imgResultado"
+                   HeightRequest="50"
+                  
+                   />
+                
+                <Label
                 x:Name="txtResultado"
                 Text=""
-                FontSize="18"
+                FontSize="22"
                 HorizontalOptions="Center" />
+            </HorizontalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>

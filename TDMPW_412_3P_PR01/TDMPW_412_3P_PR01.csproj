@@ -70,6 +70,9 @@
 	  <None Remove="Resources\Images\pregunta7.jpeg" />
 	  <None Remove="Resources\Images\pregunta8.jpeg" />
 	  <None Remove="Resources\Images\pregunta9.jpeg" />
+	  <None Remove="Resources\Images\resultado1.png" />
+	  <None Remove="Resources\Images\resultado2.png" />
+	  <None Remove="Resources\Images\resultado3.png" />
 	</ItemGroup>
 
 	<ItemGroup>
