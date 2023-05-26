@@ -105,6 +105,7 @@ public partial class MainPage : ContentPage
 
         numeroPregunta += 1;
         txtPregunta.Text = preguntas[numbers[numeroPregunta]];
+        txtRespuesta.Text = "";
         intentos = 2;
        // imgPregunta.image = NSImage(named: "pregunta\(numbers[contador])")!;
 
@@ -116,10 +117,8 @@ public partial class MainPage : ContentPage
     {
 
         correctas++;
-        // racha = racha + 1
+        txtPuntaje.Text = $"Puntos: {correctas}";
         txtResultado.Text = "Respuesta Correcta";
-       // txtCorrectas.stringValue = "CORRECTAS: " + String(correctas)
-       // txtPuntosParaGanar.stringValue = String((puntajeParaGanar - correctas)) + " PUNTOS PARA GANAR"
 
 
     }
@@ -128,11 +127,6 @@ public partial class MainPage : ContentPage
     {
         txtResultado.Text = "Respuesta Incorrecta";
         incorrectas++;
-        // vidas = vidas - 1
-        //racha = 0
-        //corazones[vidas].isHidden = true
-        //txtVidas.stringValue = "VIDAS: " + String(vidas)
-
 
     }
 
@@ -154,10 +148,7 @@ public partial class MainPage : ContentPage
 
     void terminarJuego()
     {
-
         juegoTerminado = true;
-
-
     }
 
     void perderJuego()
@@ -176,7 +167,6 @@ public partial class MainPage : ContentPage
     }
 
     void validarRespuesta() {
-
 
         if (!juegoTerminado)
         {

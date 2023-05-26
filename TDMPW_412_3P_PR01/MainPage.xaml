@@ -11,6 +11,11 @@
            HorizontalOptions="Center" 
             >
 
+            <Label
+                x:Name="txtPuntaje"
+                Text="Puntos: 0"
+                FontSize="25"
+                HorizontalOptions="End" />
 
             <Label
                 x:Name="txtPregunta"
