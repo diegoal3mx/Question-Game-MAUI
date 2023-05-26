@@ -4,38 +4,62 @@
              x:Class="TDMPW_412_3P_PR01.MainPage">
 
     <ScrollView>
+        <ScrollView.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Offset="0.0" Color="#240000"></GradientStop>
+                <GradientStop Offset="0.0" Color="#a705ba"></GradientStop>
+                <GradientStop Offset="0.23" Color="#7a9b50"></GradientStop>
+                <GradientStop Offset="0.55" Color="#498a8c"></GradientStop>
+                <GradientStop Offset="0.86" Color="#090979"></GradientStop>
+                <GradientStop Offset="1" Color="#ff0072"></GradientStop>
+            </LinearGradientBrush>
+        </ScrollView.Background>
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center"
            HorizontalOptions="Center" 
+            WidthRequest="900"
             >
 
             <Label
                 x:Name="txtPuntaje"
                 Text="Puntos: 0"
                 FontSize="25"
+              
                 HorizontalOptions="End" />
 
             <Label
                 x:Name="txtPregunta"
                 Text="Pregunta"
-                FontSize="32"
-                HorizontalOptions="Center" />
+                FontSize="50"
+                FontFamily="question"
+                HorizontalOptions="Center" 
+                HorizontalTextAlignment="Center"
+                HeightRequest="100"
+                />
+
+           
+            <Image x:Name="imgPregunta"
+                   HeightRequest="100"
+                   Source="dotnet_bot.png"
+                   />
 
             <Entry x:Name="txtRespuesta"
                   Placeholder="Ingresa tu respuesta"
+                  PlaceholderColor="#cfd0d4"
                   WidthRequest="200"
                 HorizontalOptions="Center"
                  />
 
             <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                
                 <Button
                 x:Name="btnComprobar"
                 Text="Comprobar"
-                
                 Clicked="btnComprobar_Clicked"
                 HorizontalOptions="Center" />
+                
                 <Button
                 x:Name="btnReiniciar"
                 Text="Reiniciar"

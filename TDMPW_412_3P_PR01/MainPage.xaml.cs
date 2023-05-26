@@ -47,7 +47,7 @@ public partial class MainPage : ContentPage
     int intentos = 2;
     bool juegoTerminado = false;
 
-    public int Next(RNGCryptoServiceProvider random)
+    public int Next(RandomNumberGenerator random)
     {
         byte[] randomInt = new byte[4];
         random.GetBytes(randomInt);
@@ -75,6 +75,8 @@ public partial class MainPage : ContentPage
         intentos = 2;
         juegoTerminado = false;
         txtPregunta.Text = preguntas[numbers[numeroPregunta]];
+        imgPregunta.Source = $"pregunta{(numbers[numeroPregunta])}.jpeg";
+        txtPuntaje.Text = $"Puntos: {correctas}";
         txtResultado.Text = "";
         txtRespuesta.Text = "";
 
@@ -83,10 +85,9 @@ public partial class MainPage : ContentPage
 
     void randomizarPreguntas()
     {
-
-        RNGCryptoServiceProvider random = new RNGCryptoServiceProvider();
+    
+        RandomNumberGenerator random = RandomNumberGenerator.Create();
         numbers = numbers.OrderBy(x => Next(random)).ToArray();
-
 
     }
 
@@ -102,12 +103,12 @@ public partial class MainPage : ContentPage
 
     void mostrarSiguientePregunta()
     {
-
+       
         numeroPregunta += 1;
         txtPregunta.Text = preguntas[numbers[numeroPregunta]];
         txtRespuesta.Text = "";
         intentos = 2;
-       // imgPregunta.image = NSImage(named: "pregunta\(numbers[contador])")!;
+        imgPregunta.Source = $"pregunta{(numbers[numeroPregunta])}.jpeg";
 
 
     }
